@@ -1,0 +1,187 @@
+
+@font-face {font-family: "Kabel";
+    src: url("../fonts/MONOPOLY_INLINE.ttf");  /* iOS 4.1- */
+}
+
+* {
+    border: 0px;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+   
+    
+}
+html {
+    font-size:100% ;
+    scrollbar-width: none; 
+    overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+
+    box-sizing: border-box;
+
+}
+
+div.container {
+    background :rgb(208, 180, 165);
+    box-sizing: border-box;
+    margin: 0;
+    border:3px solid #000;
+
+    width:100.2vw;
+    height: 100.2vw;
+    display: grid;
+    grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    grid-template-rows:2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    justify-items:stretch;
+    align-items:stretch;
+    -webkit-grid-gap: 0;
+    grid-gap: 0;
+    
+}
+
+
+
+#parking {
+    background: url("../images/parking.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    grid-column:1/2;
+    grid-row:1/2;
+}
+
+#jail {
+    background: url("../images/jail.png") no-repeat center center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    grid-column:1/2;
+    grid-row:11/12;
+    transform: rotateZ(-180deg) ;
+}
+
+#Go {
+    background: url("../images/go.png") no-repeat center center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    grid-column:11/12;
+    grid-row:11/12;
+    transform: rotateZ(-90deg);
+}
+
+
+
+#GoToJail {
+    background: url("../images/GoToJail.png") center center no-repeat  ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: red;
+    grid-column:11/12;
+    grid-row:1/2;
+    transform: rotateZ(-90deg);
+}
+
+.street, .station, .chance, .caisse,
+ #tax, #sonede, #electric, #income{
+    
+    outline-width: 0;
+    z-index: 1;
+    display: none;
+    background-color: #d5e8d4;
+    border: .3vw solid #000;
+    font-family: "kabel";
+    font-size:1vw;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 600;
+}
+
+
+
+div>p{
+    width: 5vw;
+}
+
+
+
+
+.horizantal {
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+}
+
+.horizantal div.color{
+    grid-row: 1/2;
+
+    border-bottom: 3px solid #000;
+}
+.horizantal div.pcontainer {
+
+   grid-row: 3/4;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+.horizantal div.price{
+    grid-row: 5/6;
+    display:flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.vertical{
+    transform: rotateZ(-180deg);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+} 
+
+.vertical div.color{
+    grid-column: 1/2;
+    
+    border-right: 3px solid #000;
+}
+.vertical div.pcontainer {
+   transform: rotateZ(-90deg);
+   grid-column: 3/4;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+
+.vertical div.price{
+    transform: rotateZ(-90deg);
+    grid-column: 5/6;
+    display:flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.top {
+    transform: rotateZ(-180deg);
+}
+
+.right {
+    transform: rotateZ(360deg);
+}
+
+
+

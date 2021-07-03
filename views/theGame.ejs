@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/streets.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/other.css'>
+    <title>testing page</title>
+</head>
+<body>
+    
+
+        <div class="container">
+            <div class="square" id="parking"></div>
+            <div class="square" id="GoToJail"></div>
+            <div class="square" id="Go"></div>
+            <div class="square" id="jail"></div>
+            <% let names = ["OLD KENT ROAD","WHITECHAPEL ROAD",
+            "KINGS CROSS STATION" ,"THE ANGEL ISLINGTON",
+            "EUSTON ROAD","PENTONVILLE ROAD",
+            "PALLMALL","WHITEHALL","NORTHUM-<br>-BERL'D AVENUE","MARYLEBONE STATION",
+            "BOW STREET","MARLBOR-<br>-OUGH STREET","VINE STREET","STRAND",
+            "FLEETSTREET","TRAFALGAR SQUARE","FENCHURCH ST. STATION","LEICESTER SQUARE",
+            "COVENTRY STREET","PICCADILLY","REGENT STREET","OXFORD STREET","BOND STREET",
+            "LIVERPOOL ST. STATION" ,"PARK LANE","MAYFAIR"];
+            %>
+            
+            <%let type = "street SaddleBrown horizantal",  streetByTypes = {'EUSTON ROAD' : 'blue2',
+            'FENCHURCH ST. STATION' : 'station3', 'BOND STREET': 'green3', 
+            'MAYFAIR': 'dark2', 'PICCADILLY': 'yellow3', 'LEICESTER SQUARE': 'yellow1', 
+            'OXFORD STREET': 'green2', 'COVENTRY STREET': 'yellow2', 'TRAFALGAR SQUARE': 'red3',
+            'MARYLEBONE STATION': 'station2', 'OLD KENT ROAD': 'brown1', 'WHITEHALL': 'pink2',
+            'WHITECHAPEL ROAD': 'brown2', 'PALLMALL': 'pink1', "NORTHUM-<br>-BERL'D AVENUE": 'pink3',
+            'PENTONVILLE ROAD': 'blue3', 'BOW STREET': 'orange1', 'MARLBOR-<br>-OUGH STREET': 'orange2',
+            'LIVERPOOL ST. STATION': 'station4', 'KINGS CROSS STATION': 'station1', 'PARK LANE': 'dark1',
+            'STRAND': 'red1', 'VINE STREET': 'orange3', 'FLEETSTREET': 'red2', 'REGENT STREET': 'green1',
+            'THE ANGEL ISLINGTON': 'blue1'},
+
+            colorByStreet = {'orange1': 'BOW STREET',
+             'orange3': 'VINE STREET', 'orange2': 'MARLBOR-<br>-OUGH STREET', 'blue1': 'THE ANGEL ISLINGTON', 
+             'blue3': 'PENTONVILLE ROAD', 'station4': 'LIVERPOOL ST. STATION', 'pink2': 'WHITEHALL',
+             'green1': 'REGENT STREET', 'station1': 'KINGS CROSS STATION', 'station2': 'MARYLEBONE STATION', 
+             'station3': 'FENCHURCH ST. STATION', 'yellow3': 'PICCADILLY', 'yellow2': 'COVENTRY STREET',
+              'yellow1': 'LEICESTER SQUARE', 'red3': 'TRAFALGAR SQUARE', 'red2': 'FLEETSTREET', 'red1': 'STRAND',
+               'dark1': 'PARK LANE', 'dark2': 'MAYFAIR', 'pink1': 'PALLMALL', 'pink3': "NORTHUM-<br>-BERL'D AVENUE",
+                'blue2': 'EUSTON ROAD', 'green3': 'BOND STREET', 'green2': 'OXFORD STREET', 
+                'brown2': 'WHITECHAPEL ROAD', 'brown1': 'OLD KENT ROAD'},
+            
+            streetsByPrices ={
+                'OLD KENT ROAD': '$60M', 'WHITECHAPEL ROAD': '$60M', 
+            'KINGS CROSS STATION': '$200M', 'THE ANGEL ISLINGTON': '$100M', 'EUSTON ROAD': '$100M', 
+            'PENTONVILLE ROAD': '$120M', 'PALLMALL': '$140M', 'WHITEHALL': '$140M', 
+            "NORTHUM-<br>-BERL'D AVENUE": '$160M', 'MARYLEBONE STATION': '$200M', 'BOW STREET': '$180M', 
+            'MARLBOR-<br>-OUGH STREET': '$180M', 'VINE STREET': '$200M', 'STRAND': '$220M', 
+            'FLEETSTREET': '$220M', 'TRAFALGAR SQUARE': '$240M', 'FENCHURCH ST. STATION': '$200M',
+             'LEICESTER SQUARE': '$260M', 'COVENTRY STREET': '$260M', 'PICCADILLY': '$280M', 
+             'REGENT STREET': '$300M', 'OXFORD STREET': '$300M', 'BOND STREET': '$320M', 
+             'LIVERPOOL ST. STATION': '$200M', 'PARK LANE': '$350M', 'MAYFAIR': '$400M'
+             }%>
+
+            <%for (let i = 0; i < names.length; i++) { %>
+                <% 
+                    if (  [2,9,16,23].includes(i)){
+                        type = "station";
+                    }
+                    else if ( i == 3){
+                        type = "street skyblue horizantal";
+                        }
+                    else if ( i == 6){
+                        type = "street pink vertical";
+                        }
+                    else if ( i == 10){
+                        type = "street orange vertical";
+                        }
+                    else if ( i == 13){
+                        type = "street red horizantal top";
+                        }
+                    else if ( i == 17){
+                        type = "street yellow horizantal top";
+                        }
+                    else if ( i == 20){
+                        type = "street green vertical right";
+                    }
+                    else if ( i == 24){
+                        type = "street blue vertical right"
+                }%> 
+            
+                <div class = "<%=type %>" id = "<%= streetByTypes[names[i]] %>" >
+                    <div class="color"></div>
+                    <%if(streetByTypes[names[i]] == 'station1' || streetByTypes[names[i]] == 'station3'  ){%>
+                        <img src="images/train.svg">
+                    <%}else if(streetByTypes[names[i]] == 'station2' || streetByTypes[names[i]] == 'station4'  ){%>
+                        <img src="images/train1.svg">
+                    <%}%>
+                    <div class = 'pcontainer'><p><%- names[i] %></p></div>
+                    <div class="price"><%= streetsByPrices[names[i]] %> </div> 
+                </div>
+            <% }; %> 
+            <%for (let i = 1; i < 4; i++) { %>
+                <div class ="chance" id ="<%="chance" + i %>">
+                    <div class="pcontainer">
+                        <p> 
+                            CHANCE
+                        </p>
+                    </div>
+                    <img src="../images/<%="chance" + i %>.png" alt="on chance">
+                </div>
+                <div class ="caisse" id ="<%="caisse" + i %>">
+                    <div class="pcontainer">
+                        <p> 
+                            COMMUNITY CHEST
+                        </p>
+                    </div>
+                    <img src="../images/caisse30.png" alt="on caisse">
+                    
+                </div>
+            <% } %>
+
+
+            <div id="tax">
+                <div class="pcontainer">
+                    <p>
+                        SUPER TAX
+                    </p>
+                </div>
+                <img src="../images/tax1.png" alt="on tax">
+                <div class="price">
+                    $100M
+                </div>
+            </div>
+
+
+            <div id="sonede">
+                <div class="pcontainer">
+                    <p>
+                        WATER WORKS 
+                    </p>
+                </div>
+                <img src="../images/sonede.png" alt="on Water Works">
+                <div class="price">
+                    $150M
+                </div>
+            </div>
+
+
+            <div id="electric">
+                <div class="pcontainer">
+                    <p>
+                        ELECTRIC COMPANY
+                    </p>
+                </div>
+                <img src="../images/electric.png" alt="on Electric company">
+                <div class="price">
+                    $150M
+                </div>
+            </div>
+
+
+            <div id="income">
+                <div class="pcontainer">
+                    <p>
+                        INCOME TAX
+                    </p>
+                </div>
+                <div class="price">
+                    $200M
+                </div>
+            </div>
+
+            
+            <div id="board">
+                <img src="../images/board.png" alt="">
+                <div id="chance">
+                    <img src="../images/chance.png" alt="">
+                </div>
+                <div id="caisse">
+                    <img src="../images/caisse.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div id = "players">
+           
+    </div>
+    <div id="status">
+        <div id="player1">
+        
+        </div>
+        <div id="player2">
+            
+        </div>
+        <div id="player3">
+
+        </div>
+        <div id="player4">
+
+        </div>    
+    </div> 
+
+
+<script src='js/main.js'></script>
+</body>
+</html>

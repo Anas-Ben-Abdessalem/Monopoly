@@ -1,0 +1,417 @@
+
+#station1 .pcontainer ,#station3 .pcontainer  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-row: 1/2;
+}
+#station1 .price, #station3 .price {
+    display: flex;
+    justify-content: center;
+    align-items: center; margin: auto 0;
+    text-align: center; margin: auto 0;
+    grid-row: 5/6;
+}
+
+
+
+#station1 {
+    grid-row: 11/12;
+    grid-column: 6/7;    
+    display: grid;
+}
+
+#station1 img , #station3 img{
+    width: 6vw;
+    height: 6vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-row: 3/5;
+}
+
+#station3 {
+    grid-row: 1/2;
+    grid-column: 6/7;    
+    display: grid;
+    transform: rotateZ(180deg);
+    
+
+}
+
+
+#station2 {
+    grid-row: 6/7;
+    grid-column: 1/2;    
+    display: grid;
+    transform: rotateZ(180deg);
+
+
+}
+
+#station2 img , #station4 img{
+    width: 6vw;
+    height: 6vw;
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 3/5;
+    grid-row: 1/6;
+    transform: rotateZ(180deg);
+
+}
+
+#station4 {
+    grid-row: 6/7;
+    grid-column: 11/12;    
+    display: grid;
+
+}
+
+#station2 .pcontainer ,#station4 .pcontainer  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-column: 1/2;
+    grid-row: 1/6;
+    transform: rotateZ(-90deg);
+
+}
+#station2 .price, #station4 .price {
+    transform: rotateZ(-90deg);
+    grid-row: 1/6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-column: 5/6;
+}
+
+#caisse1 {
+    display: grid;
+    grid-column: 9/10;
+    grid-row: 11/12;  
+}
+
+#caisse1 img ,#chance1 img{
+    grid-row: 2/3; 
+    width: 6vw;
+    height: 6vw;
+    display: flex;
+    align-self: start;
+    justify-self: center;
+
+}
+
+#caisse1 .pcontainer ,#chance1 .pcontainer  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-row: 1/2;
+}
+
+#caisse2 {
+    display: grid;
+    grid-column:1/2;
+    grid-row: 4/5;  
+}
+
+#caisse2 img , #caisse3 img
+{
+    grid-row: 1/6;
+    grid-column: 2/3; 
+    width: 6vw;
+    height: 6vw;
+    display: flex;
+    align-self: start;
+    justify-self: center;
+    transform: rotateZ(90deg);
+
+}
+
+#caisse2 .pcontainer , #caisse3 .pcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-column: 3/4;
+    grid-row: 1/6;
+    transform: rotateZ(90deg);
+}
+
+#caisse3 {
+    display: grid;
+    grid-column:11/12;
+    grid-row: 4/5;
+    transform: rotateZ(-180deg);  
+}
+
+
+
+#chance1 {
+    display: grid;
+    grid-column: 4/5;
+    grid-row: 11/12;  
+}
+
+#chance1 img{
+    grid-row: 2/3; 
+    width: 6vw;
+    height: 9vw;
+    display: flex;
+    align-self: start;
+    justify-self: center;
+
+}
+
+#chance2 {
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 1/2;  
+    transform:rotateZ(180deg)
+}
+
+#chance3 {
+    display: grid;
+    grid-column: 11/12;
+    grid-row: 7/8;  
+    
+}
+#chance3 .pcontainer{
+    display: flex;
+    margin: 0 ;
+    justify-content: center;
+    margin-bottom: 5px;
+    width: 3vw;
+    align-items: center;
+    text-align: center;
+    grid-column: 1/2;
+    grid-row: 1/6;
+    transform: rotateZ(270deg);
+}
+
+
+#chance3 img {
+    grid-row: 1/6;
+    grid-column: 2/6;
+    display: flex;
+    align-self: center;
+    justify-self:start;
+    width: 10vw;
+    height: 6vw;
+    
+    position: relative;
+
+}
+
+#chance2 .pcontainer {
+    grid-row:1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+   
+}
+
+#chance2 img {
+    width: 6vw;
+    height: 11vw;
+    grid-row: 2/4;
+    display: flex;
+    justify-self: center;
+    align-items: start;
+}
+
+#tax {
+    display: grid;
+    grid-column:11/12;
+    grid-row:9/10;  
+}
+
+#tax img {
+    width:6vw;
+    height:6vw;
+    grid-column: 2/4;
+    display:flex;
+    justify-self: center;
+    align-items:center;
+}
+
+
+#tax .pcontainer {
+    transform:rotateZ(-90deg);
+    grid-column: 1/2;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+
+
+#tax .price {
+    transform:rotateZ(-90deg);
+    grid-column: 5/6;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+
+#sonede {
+    display: grid;
+    grid-column:9/10;
+    grid-row:1/2;  
+    transform: rotateZ(180deg);
+}
+
+#sonede img {
+    width:7vw;
+    height:7vw;
+    grid-row: 3/5;
+    display:flex;
+    justify-self: center;
+    align-items:center;
+}
+
+
+#sonede .pcontainer {
+    grid-row: 1/2;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+
+
+#sonede .price {
+    grid-row: 5/6;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+#electric {
+    display: grid;
+    grid-column:1/2;
+    grid-row:9/10; 
+    transform:rotateZ(180deg); 
+}
+
+#electric img {
+    transform: rotateZ(-90deg);
+    width:7vw;
+    height:7vw;
+    grid-row: 1/6;
+    grid-column: 3/5;
+    display:flex;
+    justify-self: center;
+    align-items:center;
+}
+
+
+#electric .pcontainer {
+    transform: rotateZ(-90deg);
+    grid-column: 1/2;
+    grid-row: 1/6;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+
+
+#electric .price {
+    transform: rotateZ(-90deg);
+    grid-column: 5/6;
+    grid-row: 1/6;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+#income {
+    display: grid;
+    grid-column:7/8;
+    grid-row:11/12; 
+}
+
+#income .pcontainer {
+    grid-row: 1/2;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+
+
+#income .price {
+    grid-row: 5/6;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+
+#board{
+    display: grid;
+    grid-column:2/11;
+    grid-row:2/11;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#board img{
+    display:flex ;
+    justify-content: center;
+    align-items:center;
+    grid-column:1/11;
+    grid-row: 1/11;
+    width:100%;
+    height:100%;
+}
+
+#chance {
+    grid-column: 2/5;
+    grid-row: 9/10;
+
+}
+
+#chance img{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width:100%;
+    height:100%;
+}
+
+#caisse {
+    grid-column: 7/10;
+    grid-row: 3/4;
+
+}
+
+#caisse img {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width:100%;
+    height:100%;
+
+}
+
+
