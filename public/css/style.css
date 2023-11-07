@@ -185,3 +185,127 @@ div>p{
 
 
 
+/* === POSITIONING SPRITES (one at a time) === */
+#Go {
+    display: flex;
+    justify-content: flex-center;
+    align-items: center;
+}
+.sprite {
+    height: auto !important;
+    width:5vw !important; 
+    bottom: 2vw;
+    margin:0;
+    padding: 0;
+    z-index:10;
+
+}
+
+.horizantal .sprite_container {
+  
+    grid-row: 4/5;
+    position: relative; 
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#station1 .sprite_container, #income .sprite_container,
+#station3 .sprite_container,#chance1 .sprite_container,
+#chance2 .sprite_container, #sonede .sprite_container , #caisse1 .sprite_container {
+    position:relative;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.horizantal .sprite,#station1 .sprite, #income .sprite,
+#station3 .sprite,#chance1 .sprite,
+#chance2 .sprite, #sonede .sprite, #caisse1 .sprite{
+    position: absolute;
+    bottom: 2px;
+}
+#income .sprite {
+    bottom: -5vw;
+}
+
+.vertical .sprite_container, #caisse2 .sprite_container,
+#chance3 .sprite_container,
+#caisse3 .sprite_container, #electric .sprite_container  {
+  
+    grid-column: 4/5;
+    grid-row: 1/5;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#station2 .images,#station4 .images {
+    grid-row: 1/6;
+}
+
+.vertical .sprite,#station2 .sprite,
+#station2 .sprite,#station4 .sprite,#caisse2 .sprite,
+#caisse3 .sprite, #electric .sprite, #tax .sprite{
+    position: absolute;
+    transform:rotateZ(-90deg)
+}
+
+
+.vertical .pcontainer,.vertical .color, .vertical .price {
+    grid-row: 1/5;
+
+}
+
+
+.horizantal1 .images {
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.horizantal1 .images .sprite_container {
+    position:absolute !important;
+    top:0 !important;right: 0 !important;left: 0 !important;bottom: 0 !important;
+
+}
+.horizantal1 .images .sprite {
+    position: relative; 
+    top: 30%;
+    right: 50%;
+    transform:translate(50%,0%);
+}
+
+.vertical1 .images {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tax .images .sprite_container,
+#caisse2 .images .sprite_container,
+#caisse3 .images .sprite_container {
+    position:absolute !important;
+    top:0 !important;right: 0 !important;left: 0 !important;bottom: 0 !important;
+
+}
+.vertical1 .images .sprite {
+    position: relative; 
+    top: 30%;
+    right: -30%;
+    transform:translate(50%,0%);
+}
+
+#caisse2 .sprite{
+    transform: rotateZ(90deg);
+    z-index: 10;
+    background: transparent;
+}

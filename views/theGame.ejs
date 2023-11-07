@@ -16,7 +16,17 @@
         <div class="container">
             <div class="square" id="parking"></div>
             <div class="square" id="GoToJail"></div>
-            <div class="square" id="Go"></div>
+            <div class="square" id="Go">
+                <div id="sprites">
+                    <!-- <img src="../images/sprites/battleship.png" alt="" class="sprite"  id="stripe1"> -->
+                    <div class="sprite_container">
+                        <img src="../images/sprites/wheelbarrow.png" alt=""  class="sprite" id="sprite2">
+                    </div>
+
+                    <!-- <img src="../images/sprites/iron.png" alt=""  class="sprite" id="stripe3">
+                    <img src="../images/sprites/racecar.png" alt=""  class="sprite" id="stripe4">     -->
+                </div>
+            </div>
             <div class="square" id="jail"></div>
             <% let names = ["OLD KENT ROAD","WHITECHAPEL ROAD",
             "KINGS CROSS STATION" ,"THE ANGEL ISLINGTON",
@@ -63,8 +73,10 @@
 
             <%for (let i = 0; i < names.length; i++) { %>
                 <% 
-                    if (  [2,9,16,23].includes(i)){
-                        type = "station";
+                    if (  [2,16].includes(i)){
+                        type = "horizantal1 station";
+                    }else if (  [9,23].includes(i)){
+                        type = "vertical1 station";
                     }
                     else if ( i == 3){
                         type = "street skyblue horizantal";
@@ -88,71 +100,118 @@
                         type = "street blue vertical right"
                 }%> 
             
-                <div class = "<%=type %>" id = "<%= streetByTypes[names[i]] %>" >
+                <div class ="<%=type %>" id = "<%= streetByTypes[names[i]] %>" >
+                    
+
                     <div class="color"></div>
-                    <%if(streetByTypes[names[i]] == 'station1' || streetByTypes[names[i]] == 'station3'  ){%>
-                        <img src="images/train.svg">
-                    <%}else if(streetByTypes[names[i]] == 'station2' || streetByTypes[names[i]] == 'station4'  ){%>
-                        <img src="images/train1.svg">
+                    <%if (type.split(" ").includes('station')){%>
+                        <div class="images">
+                            <div class="sprite_container">
+                                <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">
+                            </div>
+                        
+                        <%if(streetByTypes[names[i]] == 'station1' || streetByTypes[names[i]] == 'station3'  ){%>
+                            <img src="images/train.svg">
+                        <%}else if(streetByTypes[names[i]] == 'station2' || streetByTypes[names[i]] == 'station4'){%>
+                            <img src="images/train1.svg">
+                        <%}%>
+                        </div>
                     <%}%>
                     <div class = 'pcontainer'><p><%- names[i] %></p></div>
+                    
                     <div class="price"><%= streetsByPrices[names[i]] %> </div> 
+                    <%if (!type.split(" ").includes('station')){%>
+                        <div class="sprite_container">
+                            <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">
+                        </div>
+                    <%}%>
                 </div>
             <% }; %> 
             <%for (let i = 1; i < 4; i++) { %>
-                <div class ="chance" id ="<%="chance" + i %>">
+                
+                <div class ="chance <%if (i == 1 || i == 2) {%>horizantal1<%}else{%> vertical1<%}%>" id ="<%="chance" + i %>">
                     <div class="pcontainer">
                         <p> 
                             CHANCE
                         </p>
                     </div>
+
+                    
+                    <div class="sprite_container">
+                        <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">
+                    </div>
                     <img src="../images/<%="chance" + i %>.png" alt="on chance">
+                   
                 </div>
-                <div class ="caisse" id ="<%="caisse" + i %>">
+                <div class ="caisse <%if (i == 1) {%>horizantal1<%}else{%> vertical1<%}%>" id ="<%="caisse" + i %>">
                     <div class="pcontainer">
                         <p> 
                             COMMUNITY CHEST
                         </p>
                     </div>
-                    <img src="../images/caisse30.png" alt="on caisse">
                     
+                    <div class="images">                        
+                        
+                        <div class="sprite_container">
+                            <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">    
+                        </div>
+                        <img src="../images/caisse30.png" alt="on caisse">
+                    </div>
                 </div>
             <% } %>
 
 
-            <div id="tax">
+            <div id="tax" class = 'vertical1'>
                 <div class="pcontainer">
                     <p>
                         SUPER TAX
                     </p>
                 </div>
-                <img src="../images/tax1.png" alt="on tax">
+                
+                <div class="images">
+                    <div class="sprite_container">
+                        <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">
+                    </div>
+                    <img src="../images/tax1.png" alt="on tax">
+                </div>
                 <div class="price">
                     $100M
                 </div>
             </div>
 
 
-            <div id="sonede">
+            <div id="sonede" class = "horizantal1">
                 <div class="pcontainer">
                     <p>
                         WATER WORKS 
                     </p>
                 </div>
-                <img src="../images/sonede.png" alt="on Water Works">
+                <div class="images">
+                    <div class="sprite_container">
+                        <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">         
+                    </div>
+                    <img src="../images/sonede.png" alt="on Water Works">
+                </div>
+                
                 <div class="price">
                     $150M
                 </div>
             </div>
 
-
-            <div id="electric">
+            <div id="electric" class = "vertical1">
                 <div class="pcontainer">
                     <p>
                         ELECTRIC COMPANY
                     </p>
                 </div>
-                <img src="../images/electric.png" alt="on Electric company">
+                <div class="images">
+                    <div class="sprite_container">
+                        <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">
+                    </div>                    
+                    <img src="../images/electric.png" alt="on Electric company">
+                </div>
+                
+
                 <div class="price">
                     $150M
                 </div>
@@ -164,6 +223,9 @@
                     <p>
                         INCOME TAX
                     </p>
+                </div>
+                <div class="sprite_container">
+                    <img src="../images/sprites/boot.png" alt=""  class="sprite" id="sprite2">
                 </div>
                 <div class="price">
                     $200M
@@ -181,10 +243,9 @@
                 </div>
             </div>
         </div>
-        <div id = "players">
-           
-    </div>
-    <div id="status">
+             
+
+    <!-- <div id="status">
         <div id="player1">
         
         </div>
@@ -197,9 +258,9 @@
         <div id="player4">
 
         </div>    
-    </div> 
+    </div>  -->
 
 
-<script src='js/main.js'></script>
+<script defer src='js/main.js'></script>
 </body>
 </html>
